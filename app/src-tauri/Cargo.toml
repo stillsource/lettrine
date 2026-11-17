@@ -1,0 +1,23 @@
+[package]
+name = "lettrine-app"
+version = "0.1.0"
+edition = "2024"
+license.workspace = true
+
+[[bin]]
+name = "lettrine"
+path = "src/main.rs"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+book-epub = { version = "0.1.0", path = "../../crates/book-epub" }
+book-import = { version = "0.1.0", path = "../../crates/book-import" }
+book-model = { version = "0.1.0", path = "../../crates/book-model" }
+book-preflight = { version = "0.1.0", path = "../../crates/book-preflight" }
+book-project = { version = "0.1.0", path = "../../crates/book-project" }
+book-typeset = { version = "0.1.0", path = "../../crates/book-typeset" }
+serde = { version = "1.0.229", features = ["derive"] }
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"

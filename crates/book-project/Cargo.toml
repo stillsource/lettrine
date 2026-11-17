@@ -1,0 +1,13 @@
+[package]
+name = "book-project"
+version = "0.1.0"
+edition = "2024"
+license.workspace = true
+
+[dependencies]
+book-model = { version = "0.1.0", path = "../book-model" }
+book-preflight = { version = "0.1.0", path = "../book-preflight" }
+book-typeset = { version = "0.1.0", path = "../book-typeset" }
+image = { version = "0.25", default-features = false, features = ["png", "jpeg"] }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"

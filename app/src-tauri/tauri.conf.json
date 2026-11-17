@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Lettrine",
+  "version": "0.1.0",
+  "identifier": "org.lettrine.studio",
+  "build": {
+    "devUrl": "http://localhost:1420",
+    "frontendDist": "../dist",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Lettrine",
+        "width": 1400,
+        "height": 900
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' blob: data:; style-src 'self' 'unsafe-inline'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/icon.png"
+    ],
+    "category": "Productivity",
+    "shortDescription": "Book formatting for authors",
+    "longDescription": "Write a book, then export a print-ready PDF, its cover and an EPUB.",
+    "license": "AGPL-3.0-or-later"
+  }
+}

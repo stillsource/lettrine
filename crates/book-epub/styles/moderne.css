@@ -1,0 +1,10 @@
+body { font-family: sans-serif; line-height: 1.45; }
+h1 { font-weight: normal; text-align: left; margin: 2em 0 1.5em; font-size: 1.4em; border-bottom: 1px solid; }
+p { margin: 0; text-indent: 0; text-align: left; }
+p + p { text-indent: 1em; }
+blockquote { margin: 1em 1.5em; }
+hr.scene-break { border: 0; border-top: 1px solid; width: 25%; margin: 1.2em auto; }
+.title-page { margin-top: 30%; }
+.title-page .title { font-size: 2em; font-weight: bold; }
+.copyright { font-size: 0.8em; margin-top: 60%; }
+aside.footnote { font-size: 0.85em; }

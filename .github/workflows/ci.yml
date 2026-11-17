@@ -1,0 +1,23 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+      - run: cargo fmt --check
+      # The app crate needs webkit2gtk and the built frontend: checked separately, not in CI yet.
+      - run: cargo clippy --workspace --exclude lettrine-app --all-targets -- -D warnings
+      - run: cargo test --workspace --exclude lettrine-app
+      - name: Render the demo book
+        run: |
+          cargo run -q -p book -- render fixtures/demo.md -o demo.pdf --epub demo.epub \
+            --title "Le phare" --author "Anonyme" --lang fr --copyright "© 2026 Anonyme"
+      - name: Validate the EPUB
+        run: |
+          curl -sSLo epubcheck.zip https://github.com/w3c/epubcheck/releases/download/v5.4.0/epubcheck-5.4.0.zip
+          unzip -q epubcheck.zip
+          java -jar epubcheck-5.4.0/epubcheck.jar demo.epub

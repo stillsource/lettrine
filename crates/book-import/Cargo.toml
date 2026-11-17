@@ -1,0 +1,9 @@
+[package]
+name = "book-import"
+version = "0.1.0"
+edition = "2024"
+license.workspace = true
+
+[dependencies]
+book-model = { version = "0.1.0", path = "../book-model" }
+pulldown-cmark = "0.13.6"

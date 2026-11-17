@@ -1,0 +1,11 @@
+body { font-family: serif; line-height: 1.4; }
+h1 { font-weight: normal; text-align: center; margin: 3em 0 2em; font-size: 1.6em; }
+p { margin: 0; text-indent: 0; text-align: justify; }
+p + p { text-indent: 1.2em; }
+blockquote { margin: 1em 2em; font-style: italic; }
+hr.scene-break { border: 0; margin: 1em 0; text-align: center; }
+hr.scene-break::after { content: "* * *"; }
+.title-page { text-align: center; margin-top: 30%; }
+.title-page .title { font-size: 2em; }
+.copyright { font-size: 0.8em; margin-top: 60%; }
+aside.footnote { font-size: 0.85em; }
